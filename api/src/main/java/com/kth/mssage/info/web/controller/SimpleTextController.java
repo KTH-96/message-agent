@@ -1,6 +1,5 @@
 package com.kth.mssage.info.web.controller;
 
-import com.kth.mssage.info.web.dto.request.ParamDto;
 import com.kth.mssage.info.web.dto.request.RequestActionDto;
 import com.kth.mssage.info.web.dto.request.skill.WeatherDto;
 import com.kth.mssage.info.web.dto.response.ResponseResultDto;
@@ -16,7 +15,7 @@ public class SimpleTextController {
 
     @ResponseStatus(value = HttpStatus.OK)
     @PostMapping("/message")
-    public ResponseResultDto<SimpleTextDto> requestMessageInfo(@RequestBody RequestActionDto<ParamDto> requestActionDto) {
+    public ResponseResultDto requestMessageInfo(@RequestBody RequestActionDto requestActionDto) {
         WeatherDto weatherDto = (WeatherDto) requestActionDto.getAction().getParamDto();
 
         SimpleTextContentDto textDto = SimpleTextContentDto.builder()
