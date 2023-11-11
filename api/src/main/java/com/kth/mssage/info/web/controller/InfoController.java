@@ -1,6 +1,12 @@
 package com.kth.mssage.info.web.controller;
 
+import com.kth.mssage.info.web.dto.request.ParamDto;
 import com.kth.mssage.info.web.dto.request.RequestActionDto;
+import com.kth.mssage.info.web.dto.request.skill.WeatherDto;
+import com.kth.mssage.info.web.dto.response.ResponseResultDto;
+import com.kth.mssage.info.web.dto.response.TemplateDto;
+import com.kth.mssage.info.web.dto.response.skill.SimpleTextDto;
+import java.util.ArrayList;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +21,18 @@ public class InfoController {
 
     @ResponseStatus(value = HttpStatus.OK)
     @PostMapping("/message")
-    public ResponseEntity<String> requestMessageInfo(@RequestBody RequestActionDto requestActionDto) {
-        return ResponseEntity.ok("성공 or 실패 메세지");
+    public ResponseResultDto requestMessageInfo(@RequestBody RequestActionDto requestActionDto) {
+        WeatherDto weatherDto = (WeatherDto) requestActionDto.getAction().getParamDto();
+
+        SimpleTextDto message = SimpleTextDto.builder()
+                .simpleText(weatherDto.getLocation() + " 날씨가 좋아요")
+                .build();
+
+        TemplateDto<SimpleTextDto> templateDto = TemplateDto.<SimpleTextDto>builder()
+                .build();
+
+        templateDto.addOutput(message);
+
+        return ResponseResultDto.createResultMessage(templateDto);
     }
 }
