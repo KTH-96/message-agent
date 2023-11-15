@@ -1,6 +1,7 @@
 package com.kth.mssage.info.web.controller;
 
 
+import com.kth.mssage.info.web.dto.request.ParamDto;
 import com.kth.mssage.info.web.dto.request.RequestActionDto;
 import com.kth.mssage.info.web.dto.request.skill.WeatherDto;
 import com.kth.mssage.info.web.dto.response.ResponseResultDto;
@@ -17,7 +18,7 @@ public class TextCardController {
 
     @ResponseStatus(value = HttpStatus.OK)
     @PostMapping("/message")
-    public ResponseResultDto requestMessageInfo(@RequestBody RequestActionDto requestActionDto) {
+    public ResponseResultDto<TextCardDto> requestMessageInfo(@RequestBody RequestActionDto<ParamDto> requestActionDto) {
         WeatherDto weatherDto = (WeatherDto) requestActionDto.getAction().getParamDto();
 
         TextCardButtonDto textCardButtonDto = TextCardButtonDto.builder()

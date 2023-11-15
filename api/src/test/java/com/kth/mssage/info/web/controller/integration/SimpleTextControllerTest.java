@@ -25,8 +25,8 @@ class SimpleTextControllerTest {
 
     @BeforeEach
     public void setup() throws Exception {
-        jsonRequest = JsonReader.readJsonFile("__files\\payload\\chatbot-message-request.json");
-        jsonResponse = JsonReader.readJsonFile("__files\\payload\\simple-text-message-response.json");
+        jsonRequest = JsonReader.readJsonFile("__files/payload/chatbot-message-request.json");
+        jsonResponse = JsonReader.readJsonFile("__files/payload/simple-text-message-response.json");
     }
 
     @Test

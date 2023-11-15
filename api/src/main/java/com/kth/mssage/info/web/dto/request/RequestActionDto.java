@@ -7,12 +7,12 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class RequestActionDto {
+public class RequestActionDto<T extends ParamDto> {
 
-    private final ActionDto action;
+    private final ActionDto<T> action;
 
     @JsonCreator
-    public RequestActionDto(@JsonProperty("action") ActionDto action) {
+    public RequestActionDto(@JsonProperty("action") ActionDto<T> action) {
         this.action = action;
     }
 

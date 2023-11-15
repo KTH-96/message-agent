@@ -25,8 +25,8 @@ class TextCardControllerTest {
 
     @BeforeEach
     public void setup() throws Exception {
-        jsonRequest = JsonReader.readJsonFile("__files\\payload\\chatbot-message-request.json");
-        jsonResponse = JsonReader.readJsonFile("__files\\payload\\text-card-message-response.json");
+        jsonRequest = JsonReader.readJsonFile("__files/payload/chatbot-message-request.json");
+        jsonResponse = JsonReader.readJsonFile("__files/payload/text-card-message-response.json");
     }
 
     @Test

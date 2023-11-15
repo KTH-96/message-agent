@@ -1,18 +1,17 @@
 package com.kth.mssage.info.web.dto.response;
 
-import com.kth.mssage.info.InfoConstant;
 import lombok.Builder;
 import lombok.Getter;
 
 @Getter
 @Builder
-public class ResponseResultDto {
+public class ResponseResultDto<T> {
 
-    private final String version = InfoConstant.CHATBOT_ANSWER_VERSION;
-    private final TemplateDto template;
+    private final String version = "2.0";
+    private final TemplateDto<T> template;
 
-    public static ResponseResultDto createResultMessage(TemplateDto templateDto) {
-        return ResponseResultDto.builder()
+    public static <T> ResponseResultDto<T> createResultMessage(TemplateDto<T> templateDto) {
+        return ResponseResultDto.<T>builder()
                 .template(templateDto)
                 .build();
     }
