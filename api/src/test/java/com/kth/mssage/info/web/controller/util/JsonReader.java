@@ -1,17 +1,12 @@
 package com.kth.mssage.info.web.controller.util;
 
-
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.util.FileCopyUtils;
-
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class JsonReader {
 
-    public static String readJsonFile(String fileName) throws IOException {
-        ClassPathResource classPathResource = new ClassPathResource(fileName);
-        byte[] bytes = FileCopyUtils.copyToByteArray(classPathResource.getInputStream());
-        return new String(bytes, StandardCharsets.UTF_8);
+    public static String TEST_ROOT_PATH = "C:\\Users\\TaeHyun\\IdeaProjects\\message-agent\\api\\src\\test\\resources\\";
+    public static String readJsonFile(String filePath) throws Exception {
+        return new String(Files.readAllBytes(Path.of(TEST_ROOT_PATH + filePath)));
     }
 }

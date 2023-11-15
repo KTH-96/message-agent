@@ -1,19 +1,12 @@
 package com.kth.mssage.info.web.controller;
 
-import com.kth.mssage.info.web.dto.request.ParamDto;
 import com.kth.mssage.info.web.dto.request.RequestActionDto;
 import com.kth.mssage.info.web.dto.request.skill.WeatherDto;
 import com.kth.mssage.info.web.dto.response.ResponseResultDto;
 import com.kth.mssage.info.web.dto.response.TemplateDto;
 import com.kth.mssage.info.web.dto.response.skill.SimpleTextDto;
-import java.util.ArrayList;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/info")
 @RestController
