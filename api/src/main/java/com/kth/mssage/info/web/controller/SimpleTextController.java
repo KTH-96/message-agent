@@ -4,8 +4,8 @@ import com.kth.mssage.info.web.dto.request.RequestActionDto;
 import com.kth.mssage.info.web.dto.request.skill.WeatherDto;
 import com.kth.mssage.info.web.dto.response.ResponseResultDto;
 import com.kth.mssage.info.web.dto.response.TemplateDto;
-import com.kth.mssage.info.web.dto.response.skill.simpletext.SimpleTextContentDto;
 import com.kth.mssage.info.web.dto.response.skill.simpletext.SimpleTextDto;
+import com.kth.mssage.info.web.dto.response.skill.simpletext.SimpleTextContentDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

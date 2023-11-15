@@ -3,7 +3,9 @@
   "template": {
     "outputs": [
       {
-        "simpleText":  "사용자가 원하는 위치 날씨가 좋아요"
+        "simpleText":  {
+          "text": "사용자가 원하는 위치 날씨가 좋아요"
+        }
       }
     ]
   }
